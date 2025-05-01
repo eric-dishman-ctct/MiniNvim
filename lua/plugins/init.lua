@@ -1,5 +1,7 @@
-require('plugins.manager')
 require('plugins.statusline')
+require('plugins.appearance')
+require('plugins.workflow')
+require('plugins.editor')
 require('plugins.clue')
 require('plugins.colors')
 require('plugins.basics')

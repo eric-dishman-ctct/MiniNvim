@@ -1,6 +1,6 @@
-require('mini.deps')
+local now = MiniDeps.now
 
-MiniDeps.now(function() 
+now(function() 
 	require('mini.statusline').setup()
 	require('mini.icons').setup()
 	require('mini.git').setup()

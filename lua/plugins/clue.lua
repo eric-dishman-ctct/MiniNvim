@@ -1,5 +1,3 @@
-require('mini.deps')
-
 local now, later = MiniDeps.now, MiniDeps.later
 
 now(function()
