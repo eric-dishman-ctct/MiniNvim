@@ -1,2 +1,6 @@
+-- require('config.autocommands')
 require('config.options')
 require('config.keymaps')
+require('config.folds')
+require('config.workflows')
+require('config.colors')

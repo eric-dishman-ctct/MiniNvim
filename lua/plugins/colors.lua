@@ -1,30 +1,28 @@
-local now, later = MiniDeps.now, MiniDeps.later
+local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
 
-now(function()
-	  require('mini.base16').setup({
-	    palette = {
-	      base00 = '#112641',
-	      base01 = '#3a475e',
-	      base02 = '#606b81',
-	      base03 = '#8691a7',
-	      base04 = '#d5dc81',
-	      base05 = '#e2e98f',
-	      base06 = '#eff69c',
-	      base07 = '#fcffaa',
-	      base08 = '#ffcfa0',
-	      base09 = '#cc7e46',
-	      base0A = '#46a436',
-	      base0B = '#9ff895',
-	      base0C = '#ca6ecf',
-	      base0D = '#42f7ff',
-	      base0E = '#ffc4ff',
-	      base0F = '#00a5c5',
-	    },
-	    use_cterm = true,
-	    plugins = {
-	      default = false,
-	      ['echasnovski/mini.nvim'] = true,
-	    },
-	  })
+add('scottmckendry/cyberdream.nvim')
+add('eldritch-theme/eldritch.nvim')
+add('norcalli/nvim-colorizer.lua')
+
+now(function() 
+  require('mini.hipatterns').setup({
+    highlighters = {
+      fixme = { pattern = 'FIXME', group = 'MiniHipatternsFixme' },
+      hack  = { pattern = 'HACK',  group = 'MiniHipatternsHack'  },
+      todo  = { pattern = 'TODO',  group = 'MiniHipatternsTodo'  },
+      note  = { pattern = 'NOTE',  group = 'MiniHipatternsNote'  },
+    } 
+  })
+	require('eldritch').setup({
+			transparent = true,
+	})
+  require('cyberdream').setup({
+   transparent = true,
+   highlights = {
+    LineNr = { bg = 'none' },
+    -- CursorLine = { bg = '#243549'},
+    CursorLine = { bg = '#2a2d32'},
+   },
+  })
+	require('colorizer').setup()
 end)
-

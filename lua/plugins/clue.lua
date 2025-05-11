@@ -44,5 +44,10 @@ now(function()
 	      miniclue.gen_clues.windows(),
 	      miniclue.gen_clues.z(),
 	    },
+
+			window = {
+					config = { width = 'auto' },
+					delay = 500,
+			},
 	  })
 end)
