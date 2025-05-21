@@ -18,5 +18,15 @@ require('config')
 require('plugins')
 require('functions')
 
+-- LSP Setup
+vim.lsp.enable({
+  'clangd',
+  'matlab_ls',
+  'jsonls',
+  'lemminx',
+  'ts_ls',
+  'lua_ls',
+})
+
 _G.Config = {}
 
