@@ -24,3 +24,7 @@ opt.tabstop = 2          -- Number of spaces tabs count for
 
 opt.termguicolors = true
 
+opt.conceallevel = 2
+opt.concealcursor = 'nc'
+
+-- opt.completeopt = {'fuzzy','menu','menuone'}
