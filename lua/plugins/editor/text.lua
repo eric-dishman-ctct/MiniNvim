@@ -1,4 +1,6 @@
-local now = MiniDeps.now
+local add, now = MiniDeps.add, MiniDeps.now
+
+add('justinsgithub/wezterm-types')
 
 now(function()
 	require('mini.pairs').setup()
