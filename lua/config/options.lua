@@ -27,4 +27,10 @@ opt.termguicolors = true
 opt.conceallevel = 2
 opt.concealcursor = 'nc'
 
--- opt.completeopt = {'fuzzy','menu','menuone'}
+if vim.fn.has('nvim-0.11') == 1 then
+		opt.completeopt:append('fuzzy')
+else
+		vim.opt.completeopt:append('menuone,noselect')
+end
+
+opt.pumheight = 10

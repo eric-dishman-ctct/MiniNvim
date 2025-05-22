@@ -7,7 +7,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		local map = vim.keymap.set
 
 		if client:supports_method('textDocument/codeAction') then
-			vim.keymap.set('n', '<leader>ca',
+			map('n', '<leader>ca',
 				function()
 					vim.lsp.buf.code_action()
 				end,
@@ -43,7 +43,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		end
 
 		if client:supports_method('textDocument/formatting') then
-			vim.keymap.set('n', '<leader>cf',
+			map('n', '<leader>cf',
 				function()
 					vim.lsp.buf.format({ bufnr = args.buf, id = client.id })
 				end,
@@ -66,7 +66,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		end
 
 		if client:supports_method('textDocument/rename') then
-			vim.keymap.set('n', '<leader>cr',
+			map('n', '<leader>cr',
 				function()
 					vim.lsp.buf.rename()
 				end, { desc = 'Rename Symbol' })
@@ -96,11 +96,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			)
 		end
 
-		vim.keymap.set('n', '[d', function() vim.diagnostic.jump({count = -1, float = false }) end,
+		map('n', '[d', function() vim.diagnostic.jump({count = -1, float = false }) end,
 			{ buffer = args.buf, noremap = true, silent = true, desc = 'Previous Diagnostic' })
-		vim.keymap.set('n', ']d', function() vim.diagnostic.jump({count = 1, float = false }) end,
+		map('n', ']d', function() vim.diagnostic.jump({count = 1, float = false }) end,
 			{ buffer = args.buf, noremap = true, silent = true, desc = 'Next Diagnostic' })
-		vim.keymap.set('n', '<leader>e', function() vim.diagnostic.open_float() end,
+		map('n', '<leader>e', function() vim.diagnostic.open_float() end,
 			{ buffer = args.buf, noremap = true, silent = true, desc = 'Show Line Diagnostics' })
 	end,
 })
