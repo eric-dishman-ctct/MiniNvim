@@ -25,6 +25,7 @@ require'treesitter-context'.setup{
     'xml',          'regex', 'rust', 'toml', 'tsx', 'yaml',
   }
 
+---@diagnostic disable-next-line: missing-fields
   require('nvim-treesitter.configs').setup({
     ensure_installed = ensure_installed,
     highlight = { enable = true },
